@@ -13,10 +13,6 @@ public class Main {
         System.out.println("It's time to eat breakfast\n Ok, I'm coming!");
         System.out.println(c);
 
-
-
-        System.out.println(Arrays.deepToString(list));
-
         var value = 10d;
         System.out.println("ようこそ、\nJavaの世界へ");
         String str = null;
