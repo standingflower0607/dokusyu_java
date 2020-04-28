@@ -34,5 +34,18 @@ public class Operator_3 {
         var y = 0.6;
         System.out.println(Math.abs(x - y) < EPSILON);
 
+        String value = "hello";
+        System.out.println(value == null ? "値なし" : value);
+
+        System.out.println("123".equals("123"));
+
+        String str = null;
+        // nullチェックをしないとNUllPointerExceptionが起きる
+        if(str != null && str.endsWith(".java")){
+            System.out.println("ファイルの拡張子はjavaです");
+        }else{
+            System.out.println("javaファイルじゃない");
+        }
+
     }
 }
