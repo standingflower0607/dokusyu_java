@@ -1,6 +1,8 @@
-import java.util.regex.Pattern;
-import java.util.*;
+import java.math.BigInteger;
+import java.text.NumberFormat;
 import java.time.*;
+import java.util.*;
+import java.util.regex.Pattern;
 
 public class StandardLibarary_5 {
     public static void main(String[] args) {
@@ -85,6 +87,8 @@ public class StandardLibarary_5 {
             System.out.println(match3.group());
         }
 
+
+
         System.out.println(LocalDateTime.now());
         System.out.println(OffsetDateTime.now());
         System.out.println(ZonedDateTime.now());
@@ -96,6 +100,98 @@ public class StandardLibarary_5 {
         System.out.println(dt1.equals(dt2));
         System.out.println(dt1.isAfter(dt2));
         System.out.println(dt1.isBefore(dt2));
+
+
+        // Math
+
+        System.out.println(Math.abs(-100));
+        System.out.println(Math.max(6, 3));
+        System.out.println(Math.min(6, 3));
+        System.out.println(Math.ceil(1234.56));
+        System.out.println(Math.floor(1234.56));
+        System.out.println(Math.round(1234.56));
+        System.out.println(Math.sqrt(10000));
+        System.out.println(Math.cbrt(10000));
+        System.out.println(Math.pow(2, 4));
+        System.out.println(Math.sin(Math.toRadians(30)));
+        System.out.println(Math.cos(Math.toRadians(60)));
+        System.out.println(Math.tan(Math.toRadians(45)));
+        System.out.println(Math.log(100));
+        System.out.println(Math.log10(100));
+
+        long result = 1;
+        for (var i = 1; i < 26; i++){
+            result *= i;
+            System.out.println(result);
+        }
+
+        var result2 = BigInteger.valueOf(1);
+        for (var i = 1; i< 26 ; i++){
+            result2 = result2.multiply(BigInteger.valueOf(i));
+            System.out.println(result2);
+        }
+
+
+        // Random
+        var rnd = new Random();
+        System.out.println(rnd.nextBoolean());
+        System.out.println(rnd.nextFloat());
+        System.out.println(rnd.nextDouble());
+        System.out.println(rnd.nextInt(100));
+        System.out.println(rnd.nextLong());
+
+        // NumberFormat
+        var num1 = 1234.5678;
+        var nf1 = NumberFormat.getCurrencyInstance(Locale.JAPAN);
+        var nf2 = NumberFormat.getIntegerInstance();
+        var nf3 = NumberFormat.getNumberInstance();
+        System.out.println(nf1.format(num1));
+        System.out.println(nf2.format(num1));
+        System.out.println(nf3.format(num1));
+
+        var num2 = 0.567;
+        var nf4 = NumberFormat.getPercentInstance();
+        System.out.println(nf4.format(num2));
+
+        // Array
+
+        var array1 = new String[] { "dog", "cat", "mouse", "fox", "lion"};
+        Arrays.sort(array1);
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.binarySearch(array1, "mouse"));
+
+        var array2 = new String[] {"あ", "い", "う", "え", "お"};
+        var array3 = Arrays.copyOf(array2, 2);
+        System.out.println(Arrays.toString(array3));
+
+        var array4 = Arrays.copyOfRange(array2, 1, 7);
+        System.out.println(Arrays.toString(array4));
+
+        Arrays.fill(array4, 3, 6, "-");
+        System.out.println(Arrays.toString(array4));
+
+        //test
+
+        var testStr1 = "となりのきゃくはよくきゃくくうきゃくだ";
+        System.out.println(testStr1.lastIndexOf("きゃく"));
+        System.out.println(String.format("%sの気温は%.2f℃です", "千葉", 17.256));
+
+        System.out.println("彼女の名前は花子です".replace("彼女", "妻"));
+
+        var testDate = LocalDateTime.now();
+        System.out.println(testDate.plusDays(5).plusHours(6));
+
+        var testDate2 = LocalDateTime.of(2020, 3, 12, 0,0,0);
+        var testDate3 = LocalDateTime.of(2018, 11, 5,0,0,0);
+        var period = Period.between(testDate3.toLocalDate() ,testDate2.toLocalDate() );
+        System.out.println(period.getMonths() + "ヶ月間" + period.getDays() + "日間");
+
+        System.out.println(Math.pow(6, 3));
+        System.out.println(Math.abs(-15));
+        var testArray = new int[] {110, 14, 28, 32};
+        Arrays.sort(testArray);
+        System.out.println(Arrays.toString(testArray));
+
 
 
 
